@@ -23,7 +23,7 @@ static int gettok()
   static int LastCharacter =' ';
   
   while(isspace(LastCharacter))
-    LastCharacter = getChar();
+    LastCharacter = getchar();
 
   if (isalpha(LastCharacter)){
     IdentifierStr =LastCharacter;
@@ -54,5 +54,18 @@ static int gettok()
     }
     
   }
+if (LastCharacter == '#')
+{
+  do LastCharacter =getchar();
+  while LastCharacter!=EO && LastCharacter !='\n' && LastCharacter !='\r');
 
+  if(LastCharacter !=EOF)
+    return gettok();
+}
+if(LastCharacter==EOF)
+return tok_eof;
+
+  int ThisChar =LastCharacter;
+  LastCharacter =getchar();
+  return ThisChar;
 }
