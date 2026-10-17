@@ -334,3 +334,19 @@ static void MainLoop() {
     }
   }
 }
+// main function bin op presedence is defined here 
+int main()
+{
+  BinopPrecedence['<'] = 10;
+  BinopPrecedence['+'] = 20;
+  BinopPrecedence['-'] = 20;
+  BinopPrecedence['*'] = 40;
+
+  fprintf(stderr, "ready> ");
+  getNextToken();
+  MainLoop();
+
+  return 0;
+}
+
+}
