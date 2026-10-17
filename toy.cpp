@@ -69,3 +69,9 @@ return tok_eof;
   LastCharacter =getchar();
   return ThisChar;
 }
+// abstract syntax rtreee//
+namespace {
+  classExprAST{
+  virtual 
+  }
+}
