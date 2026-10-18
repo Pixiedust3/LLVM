@@ -44,7 +44,7 @@ static int gettok()
   if (isdigit(LastCharacter) || LastCharacter == '.') {
     std::string NumStr;
     do{
-      NumStr + =LastCharacter;
+      NumStr += LastCharacter;
       LastCharacter = getchar();
     }
     while(isdigit(LastCharacter) || LastCharacter=='.');
@@ -54,11 +54,11 @@ static int gettok()
 
     }
     
-  }
+  
 if (LastCharacter == '#')
 {
   do LastCharacter =getchar();
-  while LastCharacter!=EO && LastCharacter !='\n' && LastCharacter !='\r');
+  while (LastCharacter!=EOF && LastCharacter !='\n' && LastCharacter !='\r');
 
   if(LastCharacter !=EOF)
     return gettok();
@@ -70,15 +70,18 @@ return tok_eof;
   LastCharacter =getchar();
   return ThisChar;
 }
+
 // abstract syntax rtreee//
 namespace {
   class ExprAST{
+  public:
   virtual ~ExprAST() = default; 
   };
   class NumberExprAST: public ExprAST{
     double Val;
 
-    public NumberExprAST(double Val)
+    public :
+    NumberExprAST(double Val)
       : Val(Val)
     {}
   };
