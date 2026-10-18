@@ -70,10 +70,11 @@ return tok_eof;
   LastCharacter =getchar();
   return ThisChar;
 }
-}
+
 // abstract syntax rtreee//
 namespace {
   class ExprAST{
+  public:
   virtual ~ExprAST() = default; 
   };
   class NumberExprAST: public ExprAST{
