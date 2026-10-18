@@ -79,7 +79,8 @@ namespace {
   class NumberExprAST: public ExprAST{
     double Val;
 
-    public NumberExprAST(double Val)
+    public :
+    NumberExprAST(double Val)
       : Val(Val)
     {}
   };
